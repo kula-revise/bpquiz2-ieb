@@ -5,33 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What Stuck | The Black Power Movement | Kula Revise</title>
 <style>
-  :root {
-    /* Sunset clause: dark. Ink blue ground, two accents. */
-    --paper: #080C16;     /* page ground */
-    --sheet: #121926;     /* card sheet */
-    --white: #1B2433;     /* inner panels, sources, explanations */
-    --ink: #EAF0F9;       /* text */
-    --ink-soft: #8A97A8;
-    --flame: #FF4D6D;     /* accent one: navigation and emphasis */
-    --on-flame: #080C16;  /* text on a solid flame block */
-    --leaf: #58B6FF;      /* accent two: anything the learner earned */
-    --on-leaf: #080C16;   /* text on a solid leaf block */
-    --hair: rgba(234,240,249,0.16);
-    --rail: rgba(234,240,249,0.12);
-    --tint: rgba(88,182,255,0.10);
-    --tint-rule: rgba(88,182,255,0.42);
-    --slot-bg: rgba(234,240,249,0.05);
-    --chipA-bg: rgba(255,77,109,0.20); --chipA-fg: #FFA3B4;
-    --chipB-bg: rgba(151,163,180,0.16); --chipB-fg: #BCC6D4;
-    --chipN-bg: rgba(234,240,249,0.07); --chipN-fg: #A9B4C2;
-    --ev3-bg: rgba(88,182,255,0.16); --ev3-fg: #58B6FF;
-    --ok-bg: rgba(88,182,255,0.16);
-    --bad-bg: rgba(151,163,180,0.10); --bad-border: #7E8898;
-    --btn-hover: #E03354;
-    --start-hover: #1A2436;
-    --sans: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --serif: Georgia, 'Times New Roman', serif;
-  }
+  /* The knowledge checks carried the dark palette in :root as well as in
+   body.dark, so they had no light mode: a learner on a light phone opened
+   a black check and the toggle did nothing. The light values are the
+   lesson palette, which uses the same token set. */
+:root {--paper: #E7ECF3;      
+      --sheet: #FFFFFF;      
+      --white: #DBE2EC;      
+      --ink: #101620;        
+      --ink-soft: #57616E;
+      --flame: #B8002E;      
+      --on-flame: #FFFFFF;   
+      --leaf: #0854B4;       
+      --on-leaf: #FFFFFF;    
+      --hair: rgba(16,22,32,0.18);
+      --rail: rgba(16,22,32,0.12);
+      --tint: rgba(8,84,180,0.08);
+      --tint-rule: rgba(8,84,180,0.35);
+      --slot-bg: rgba(255,255,255,0.5);
+      --chipA-bg: #FBE0E6; --chipA-fg: #96001F;
+      --chipB-bg: #E3E8F0; --chipB-fg: #414B58;
+      --chipN-bg: #E8ECF2; --chipN-fg: #46505E;
+      --ev3-bg: #DCE8F8; --ev3-fg: #06459A;
+      --ok-bg: rgba(8,84,180,0.12);
+      --bad-bg: rgba(16,22,32,0.06); --bad-border: #8F97A6;
+      --btn-hover: #96001F;
+      --start-hover: #0A0E15;
+      --sans: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --serif: Georgia, 'Times New Roman', serif;}
   /* Dark inversion. body.dark carries the dark values; :root is the light default. */
   body.dark {
     --paper: #080C16;
@@ -241,6 +242,9 @@ body.dark .explanation.ok, body.dark .explanation.ok .expl-text,
 body.dark .explanation.no, body.dark .explanation.no .expl-text{ color:var(--mark-ink) !important; }
 .explanation.ok .expl-label, body.dark .explanation.ok .expl-label{ color:var(--ok) !important; }
 .explanation.no .expl-label, body.dark .explanation.no .expl-label{ color:var(--no) !important; }
+
+/* the rank numeral on an ordering item sat at 4.07 against its dark ground */
+body.dark .ord-rank{ color:#FF8FA3 !important; }
 </style><button id="kula-mode-toggle" type="button" onclick="kulaToggle()" aria-label="Switch between light and dark mode"><span id="kmt-icon"></span><span id="kmt-label"></span></button><script>(function(){var MOON="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z'/></svg>",SUN="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='4.2'/><path d='M12 1.6v2M12 20.4v2M3.6 12h-2M22.4 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4'/></svg>",K="kula-mode";function paint(){var d=document.body.classList.contains("dark");var ic=document.getElementById("kmt-icon"),la=document.getElementById("kmt-label");if(ic)ic.innerHTML=d?SUN:MOON;if(la)la.textContent=d?"Light mode":"Dark mode"}window.kulaToggle=function(){document.body.classList.toggle("dark");try{localStorage.setItem(K,document.body.classList.contains("dark")?"dark":"light")}catch(e){}paint()};try{if(localStorage.getItem(K)==="dark")document.body.classList.add("dark");else if(localStorage.getItem(K)!=="light"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)document.body.classList.add("dark");}catch(e){}paint();})();</script>
 <div class="container">
 
@@ -293,7 +297,7 @@ body.dark .explanation.no, body.dark .explanation.no .expl-text{ color:var(--mar
     <div class="breakdown"><div class="breakdown-label">By section</div><div id="r-sections"></div></div>
     <div class="card">
       <div class="stage-tag"><span class="chip chip-recall">Next</span></div>
-      <p>Look at the section breakdown above, not the total. Go back to the lesson covering your weakest section and run it again.</p><p>Then write the essay question out by hand in one hour, with nothing in front of you.</p>
+      <p>Look at the section breakdown above, not the total. Go back to the lesson covering your weakest section and run it again.</p><p>Then write the essay question out by hand in about eighty minutes, with nothing in front of you.</p>
     </div>
     <div class="nav" style="justify-content:center;"><button class="btn-primary" id="kdone-btn">Finish this unit &rarr;</button><button class="btn-secondary" id="redo-btn">&#8635; Choose again</button></div>
     <div class="footer">The essay: Grade 12 History, Paper 1.</div>
@@ -542,7 +546,7 @@ const BANDS = [
   {
     "min": 84,
     "band": "Excellent",
-    "desc": "The facts are secure. Stop revising content and go and write the essay question out under timed conditions, by hand, in one hour."
+    "desc": "The facts are secure. Stop revising content and go and write the essay question out under timed conditions, by hand, in about eighty minutes."
   },
   {
     "min": 67,
